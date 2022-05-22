@@ -1,0 +1,263 @@
+/*-------------------------------------------- */
+/*    Spisak stilizovanih sekcija              */
+/* ------------------------------------------- */
+/* 1. Preloader                                */
+/* 2. Registracijska forma                     */
+/* 3. Responsive                               */
+/* ------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* ------------ */
+/* 1. Preloader */
+/* ------------ */
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999999;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.preloader-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.preloader-icon {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    padding: 0px;
+}
+
+.preloader-icon span {
+    position: absolute;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background: #DE6262;
+    -webkit-animation: preloader-fx 1.6s linear infinite;
+    animation: preloader-fx 1.6s linear infinite;
+}
+
+.preloader-icon span:last-child {
+    animation-delay: -0.8s;
+    -webkit-animation-delay: -0.8s;
+}
+
+@keyframes preloader-fx {
+    0% {
+        -webkit-transform: scale(0, 0);
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+
+    100% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes preloader-fx {
+    0% {
+        -webkit-transform: scale(0, 0);
+        opacity: 0.5;
+    }
+
+    100% {
+        -webkit-transform: scale(1, 1);
+        opacity: 0;
+    }
+}
+
+/* ----------------------- */
+/* 2. Registracijska forma */
+/* ----------------------- */
+
+.register-block {
+    float: left;
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+.row>* {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 20px !important;
+}
+
+.container {
+    background: #fff;
+    border-radius: 10px;
+}
+
+.align-row {
+    justify-content: center !important;
+}
+
+.registration-banner {
+    padding: 0px !important;
+    width: -webkit-fill-available;
+}
+
+.text-position {
+    padding-left: 4px !important;
+    padding-bottom: 5px;
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+.form-control {
+    border-radius: 20px !important;
+}
+
+input.form-control {
+    padding-left: 19px;
+}
+
+.reg-sec {
+    border: 1px solid #eee;
+    border-radius: 20px 20px 20px 20px;
+    position: relative;
+}
+
+.reg-sec .copy-text {
+    position: absolute;
+    width: 80%;
+    bottom: 20px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.reg-sec .copy-text i {
+    color: #FEB58A;
+}
+
+.reg-sec .copy-text a {
+    color: #E36262;
+}
+
+.reg-sec h2 {
+    margin-bottom: 27px;
+    font-weight: 600;
+    font-size: 30px;
+    color: #DE6262;
+}
+
+.reg-sec h2:after {
+    content: " ";
+    width: 100px;
+    height: 5px;
+    background: #FEB58A;
+    display: block;
+    margin-top: 20px;
+    border-radius: 3px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.btn-danger {
+    color: white;
+    background-color: #DE6262 !important;
+}
+
+.btn-danger:hover {
+    background-color: #c44949;
+}
+
+.btn-pos {
+    margin-top: 15px !important;
+}
+
+.btn-size {
+    width: 100% !important;
+    border-radius: 20px !important;
+}
+
+.btn-danger {
+    border-top-color: #c44949 !important;
+    border-bottom-color: #c44949 !important;
+    border-left-color: #c44949 !important;
+    border-right-color: #c44949 !important;
+}
+
+.reg-form {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.text-center {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    background-position: center right 17px;
+    background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDE4NS4zNDQgMTg1LjM0NCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTg1LjM0NCAxODUuMzQ0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTkyLjY3MiwxNDQuMzczYy0yLjc1MiwwLTUuNDkzLTEuMDQ0LTcuNTkzLTMuMTM4TDMuMTQ1LDU5LjMwMWMtNC4xOTQtNC4xOTktNC4xOTQtMTAuOTkyLDAtMTUuMTggICAgYzQuMTk0LTQuMTk5LDEwLjk4Ny00LjE5OSwxNS4xOCwwbDc0LjM0Nyw3NC4zNDFsNzQuMzQ3LTc0LjM0MWM0LjE5NC00LjE5OSwxMC45ODctNC4xOTksMTUuMTgsMCAgICBjNC4xOTQsNC4xOTQsNC4xOTQsMTAuOTgxLDAsMTUuMThsLTgxLjkzOSw4MS45MzRDOTguMTY2LDE0My4zMjksOTUuNDE5LDE0NC4zNzMsOTIuNjcyLDE0NC4zNzN6IiBmaWxsPSIjNTA1MDUwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==');
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+}
+
+/* ------------- */
+/* 3. Responsive */
+/* ------------- */
+
+@media only screen and (max-width: 615px) {
+    .container {
+        padding-left: 60px !important;
+        padding-right: 60px !important;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 615px) {
+    .container {
+        padding-left: 60px !important;
+        padding-right: 60px !important;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .col-md-4 {
+        width: 37% !important;
+    }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+    .col-md-4 {
+        width: 70% !important;
+    }
+}
+
+@media only screen and (max-width: 993px) and (min-width: 992px) {
+    .col-md-4 {
+        width: 50% !important;
+    }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 994px) {
+    .col-md-4 {
+        width: 50% !important;
+    }
+}
+
+@media only screen and (max-width: 1399px) and (min-width: 1200px) {
+    .col-md-4 {
+        width: 45% !important;
+    }
+}
